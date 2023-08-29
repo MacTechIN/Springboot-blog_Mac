@@ -1,0 +1,16 @@
+package com.cos.blog.test;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+// 스프링이 com.cos.blog 패키지 이하를 스케내서 모든 파일을 메모리에 new하는 것이 아님. 
+// 특정 어노테이션이 붙어있는 클래스 파일들을 new해서(IoC) 스프링 컨테이너에 관리를 해준다. !!! 중요왜 클래스를 com.cos.blog 아래 패키지를 생성해서 사용 해야하는지 이유이다  
+@RestController   
+public class BlogControllerTest {
+	
+	@GetMapping("/test/hello")
+	public String hello() {
+		return "<h1>hello spring Boot</h1>";
+	}
+
+}
